@@ -6,7 +6,6 @@ class Grupo{
     String nome
     String descricao
     List<Grupo> subGrupo[]
-
 }
 
 ```
