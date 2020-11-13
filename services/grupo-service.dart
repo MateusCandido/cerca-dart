@@ -19,7 +19,7 @@ class GrupoService {
   }
 
   buscaPorId(Grupo grupo) {
-    repository.buscaPorId(grupo.id);
+    return repository.buscaPorId(grupo.id);
   }
 
   excluir(Grupo grupo) {

@@ -19,7 +19,7 @@ class AlunoService {
   }
 
   buscaPorId(Aluno aluno) {
-    repository.buscaPorId(aluno.id);
+    return repository.buscaPorId(aluno.id);
   }
 
   excluir(Aluno aluno) {
