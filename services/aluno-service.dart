@@ -17,4 +17,12 @@ class AlunoService {
   List<Aluno> buscarTodos() {
     return repository.buscarTodos();
   }
+
+  buscaPorId(Aluno aluno) {
+    repository.buscaPorId(aluno.id);
+  }
+
+  excluir(Aluno aluno) {
+    repository.excluir(aluno);
+  }
 }

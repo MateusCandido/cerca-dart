@@ -1,9 +1,17 @@
 class Aluno {
   int id;
-  String nome;
+  String _nome;
   String email;
 
+  String get nome {
+    return _nome;
+  }
+
+  void set nome(String nome) {
+    this._nome = nome;
+  }
+
   String toString() {
-    return ('Aluno: ' + nome + ' E-mail: ' + email);
+    return ('Aluno: ' + _nome + ' E-mail: ' + email);
   }
 }
