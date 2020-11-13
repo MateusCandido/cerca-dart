@@ -17,4 +17,12 @@ class GrupoService {
   List<Grupo> buscarTodos() {
     return repository.buscarTodos();
   }
+
+  buscaPorId(Grupo grupo) {
+    repository.buscaPorId(grupo.id);
+  }
+
+  excluir(Grupo grupo) {
+    repository.excluir(grupo);
+  }
 }
