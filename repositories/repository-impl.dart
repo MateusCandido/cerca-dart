@@ -18,8 +18,13 @@ class RepositoryImpl<T, ID> implements Repository<T, ID> {
 
   @override
   T buscaPorId(ID o) {
-    // TODO: implement buscaPorId
-    throw UnimplementedError();
+    var item;
+    lista.forEach((element) {
+      if (element.toString().indexOf(o.toString()) != -1) {
+        item = element;
+      }
+    });
+    return item;
   }
 
   @override

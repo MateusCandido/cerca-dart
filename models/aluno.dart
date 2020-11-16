@@ -12,6 +12,11 @@ class Aluno {
   }
 
   String toString() {
-    return ('Aluno: ' + _nome + ' E-mail: ' + email);
+    return ('Id: ' +
+        id.toString() +
+        '\nAluno: ' +
+        _nome +
+        '\nE-mail: ' +
+        email);
   }
 }

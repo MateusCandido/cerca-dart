@@ -18,11 +18,11 @@ class GrupoService {
     return repository.buscarTodos();
   }
 
-  buscaPorId(Grupo grupo) {
+  buscaGrupo(Grupo grupo) {
     return repository.buscaPorId(grupo.id);
   }
 
-  excluir(Grupo grupo) {
+  excluirGrupo(Grupo grupo) {
     repository.excluir(grupo);
   }
 }
