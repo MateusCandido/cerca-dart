@@ -18,10 +18,10 @@ class AlunoService {
     return repository.buscarTodos();
   }
 
-  buscaAluno(Aluno aluno) {
-    if (repository.buscaPorId(aluno.id) == null)
+  buscaAluno(int idAluno) {
+    if (repository.buscaPorId(idAluno) == null)
       throw ("Usuário não encontrado ou inexistente");
-    return repository.buscaPorId(aluno.id);
+    return repository.buscaPorId(idAluno);
   }
 
   excluirAluno(Aluno aluno) {

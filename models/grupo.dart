@@ -5,6 +5,6 @@ class Grupo {
   List<Grupo> subGrupo = [];
 
   String toString() {
-    return ('Grupo: $nome\nDescrição: $descricao\nsubgrupo: $subGrupo\n\n');
+    return ('Id: $id Grupo: $nome Descrição: $descricao subgrupo: {$subGrupo} ');
   }
 }

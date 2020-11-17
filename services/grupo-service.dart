@@ -18,8 +18,10 @@ class GrupoService {
     return repository.buscarTodos();
   }
 
-  buscaGrupo(Grupo grupo) {
-    return repository.buscaPorId(grupo.id);
+  buscaGrupo(int idGrupo) {
+    if (repository.buscaPorId(idGrupo) == null)
+      throw ("Grupo não encontrado ou inexistente");
+    return repository.buscaPorId(idGrupo);
   }
 
   excluirGrupo(Grupo grupo) {

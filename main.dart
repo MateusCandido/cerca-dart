@@ -38,6 +38,7 @@ main() {
   alunoService.cadastrar(alunoTres);
   //print(aluno);
 
+  //Aluno não cadastrado
   alunoQuatro.id = 04;
   alunoQuatro.nome = 'Otavio';
   alunoQuatro.email = 'otavio@email.com';
@@ -51,10 +52,10 @@ main() {
   //Busca de alunos por ID
   print("--------------Busca de Alunos por ID---------------");
   // Deve retornar aluno cadastrado
-  print(alunoService.buscaAluno(alunoUm));
+  print(alunoService.buscaAluno(alunoUm.id));
   // Deve retornar erro
-  print(alunoService.buscaAluno(alunoQuatro));
-
+  // print(alunoService.buscaAluno(alunoQuatro.id));
+  /*
   //Exclusão de Alunos
   print("----------------Exclusão de Alunos-----------------");
   alunoService.excluirAluno(alunoUm);
@@ -63,7 +64,7 @@ main() {
   alunoService.buscarTodos().forEach((element) {
     print(element);
   });
-
+  */
   //------------------------Grupo------------------------------
   Repository<Grupo, int> repositoryGrupo = new RepositoryImpl();
   GrupoService grupoService = new GrupoService(repositoryGrupo);
@@ -71,7 +72,7 @@ main() {
   Grupo grupoUm = new Grupo();
   Grupo grupoDois = new Grupo();
   Grupo grupoTres = new Grupo();
-
+  Grupo grupoQuatro = new Grupo();
   //Cadastrar Grupo 1
   grupoUm.id = 01;
   grupoUm.nome = 'Grupo 1';
@@ -89,13 +90,18 @@ main() {
   //print(grupo);
 
   //Cadastrar Grupo 3 com sub-grupos
-  grupoTres.id = 02;
+  grupoTres.id = 03;
   grupoTres.nome = 'Grupo 3';
   grupoTres.descricao = 'Descrição do grupo 3';
   grupoTres.subGrupo = [grupoUm, grupoDois];
 
   grupoService.cadastrar(grupoTres);
   //print(grupo);
+
+  // Grupo não cadastrado
+  grupoQuatro.id = 04;
+  grupoQuatro.nome = 'Grupo 4';
+  grupoQuatro.descricao = 'Descrição do grupo 4';
 
   //Lista de grupos cadastrados
   print("------------------Lista de Grupos------------------");
@@ -105,14 +111,16 @@ main() {
 
   //Busca de grupos por ID
   print("--------------Busca de Grupos por ID---------------");
-  grupoService.buscaGrupo(grupoUm);
-  grupoService.buscaGrupo(grupoDois);
-
+  print(grupoService.buscaGrupo(grupoUm.id));
+  // Deve retornar erro
+  // print(grupoService.buscaGrupo(grupoQuatro.id));
+  /*
   //Exclusão de grupos
   print("----------------Exclusão de Grupos-----------------");
   grupoService.excluirGrupo(grupoUm);
   grupoService.excluirGrupo(grupoDois);
-  print("------------------Lista de Grupos------------------");
+  */
+  print("--------Lista de Grupos depois da exclusão---------");
   grupoService.buscarTodos().forEach((element) {
     print(element);
   });
