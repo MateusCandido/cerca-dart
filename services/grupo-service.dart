@@ -25,6 +25,16 @@ class GrupoService {
   }
 
   excluirGrupo(Grupo grupo) {
+    if (repository.buscaPorId(grupo.id) == null)
+      throw ("Grupo não encontrado ou inexistente");
     repository.excluir(grupo);
+
+    var listaGrupo = repository.buscarTodos();
+    // Exclui grupo de subgrupos de outros grupos
+    listaGrupo.forEach((element) {
+      if (element.subGrupo.where((lixo) => grupo == lixo) != null) {
+        element.subGrupo.remove(grupo);
+      }
+    });
   }
 }

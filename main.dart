@@ -55,16 +55,18 @@ main() {
   print(alunoService.buscaAluno(alunoUm.id));
   // Deve retornar erro
   // print(alunoService.buscaAluno(alunoQuatro.id));
-  /*
+
   //Exclusão de Alunos
   print("----------------Exclusão de Alunos-----------------");
   alunoService.excluirAluno(alunoUm);
   alunoService.excluirAluno(alunoDois);
-  print("------------------Lista de Alunos------------------");
+
+  // Lista de Grupos atualizada
+  print("------------Lista de Alunos Atualizada------------");
   alunoService.buscarTodos().forEach((element) {
     print(element);
   });
-  */
+
   //------------------------Grupo------------------------------
   Repository<Grupo, int> repositoryGrupo = new RepositoryImpl();
   GrupoService grupoService = new GrupoService(repositoryGrupo);
@@ -109,18 +111,19 @@ main() {
     print(element);
   });
 
-  //Busca de grupos por ID
+  // Busca de grupos por ID
   print("--------------Busca de Grupos por ID---------------");
   print(grupoService.buscaGrupo(grupoUm.id));
   // Deve retornar erro
   // print(grupoService.buscaGrupo(grupoQuatro.id));
-  /*
-  //Exclusão de grupos
+
+  // Exclusão de grupos
   print("----------------Exclusão de Grupos-----------------");
   grupoService.excluirGrupo(grupoUm);
   grupoService.excluirGrupo(grupoDois);
-  */
-  print("--------Lista de Grupos depois da exclusão---------");
+
+  // Lista de grupos atualizada
+  print("------------Lista de Grupos Atualizada-------------");
   grupoService.buscarTodos().forEach((element) {
     print(element);
   });

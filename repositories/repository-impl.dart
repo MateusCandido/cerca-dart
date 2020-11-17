@@ -29,8 +29,7 @@ class RepositoryImpl<T, ID> implements Repository<T, ID> {
 
   @override
   void excluir(T o) {
-    // TODO: implement excluir
-    throw UnimplementedError();
+    lista.remove(o);
   }
 
   @override

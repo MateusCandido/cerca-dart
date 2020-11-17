@@ -25,6 +25,8 @@ class AlunoService {
   }
 
   excluirAluno(Aluno aluno) {
+    if (repository.buscaPorId(aluno.id) == null)
+      throw ("Usuário não encontrado ou inexistente");
     repository.excluir(aluno);
   }
 }
